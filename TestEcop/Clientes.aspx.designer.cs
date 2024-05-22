@@ -105,6 +105,24 @@ namespace TestEcop
         protected global::System.Web.UI.WebControls.TextBox txb_ci;
 
         /// <summary>
+        /// Control lbl_mensaje_S.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_mensaje_S;
+
+        /// <summary>
+        /// Control lbl_mensaje_E.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_mensaje_E;
+
+        /// <summary>
         /// Control bt_crear.
         /// </summary>
         /// <remarks>
@@ -114,13 +132,13 @@ namespace TestEcop
         protected global::System.Web.UI.WebControls.Button bt_crear;
 
         /// <summary>
-        /// Control bt_limpiar.
+        /// Control bt_actualizar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button bt_limpiar;
+        protected global::System.Web.UI.WebControls.Button bt_actualizar;
 
         /// <summary>
         /// Control grid_clientes.

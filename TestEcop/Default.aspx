@@ -4,41 +4,64 @@
 
     <main>
         <section class="row" aria-labelledby="aspnetTitle">
-            <h1 id="aspnetTitle">hola mundo</h1>
-            <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-            <p><a href="http://www.asp.net" class="btn btn-primary btn-md">Learn more &raquo;</a></p>
+            <h1 id="aspnetTitle">Carga de pedidos</h1>
+            <asp:Label ID="lbl_cliente" runat="server" Text="Cliente"></asp:Label>
+            <asp:DropDownList ID="ddl_cliente" runat="server" CssClass="form-control"></asp:DropDownList>
+            <asp:Label ID="lbl_producto" runat="server" Text="Producto"></asp:Label>
+            <asp:DropDownList ID="ddl_producto" runat="server" CssClass="form-control"></asp:DropDownList>
+            <asp:Button ID="bt_add" runat="server" Text="Agregar" CssClass="btn btn-info" OnClick="bt_add_Click"/>
+                    <asp:GridView ID="grid_pedido" runat="server" AutoGenerateColumns="False" CssClass="table" DataKeyNames="id_producto" OnRowDeleting="grid_pedido_RowDeleting">
+                        <Columns>
+                            <asp:TemplateField ShowHeader="False">
+                                <ItemTemplate>
+                                    <asp:Button ID="cl_delete" runat="server" CausesValidation="False" CssClass="btn btn-outline-danger" CommandName="Delete" Text="Eliminar" />
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:BoundField DataField="nombre" HeaderText="Nombre"></asp:BoundField>
+                            <asp:BoundField DataField="descripcion" HeaderText="Producto" />
+                            <asp:BoundField DataField="precio" HeaderText="Precio"></asp:BoundField>
+                        </Columns>
+                        <EmptyDataTemplate>
+                            Sin registros
+                        </EmptyDataTemplate>
+                    </asp:GridView>
         </section>
 
-        <div class="row">
+        <div class="row">            
+    <asp:Label ID="lbl_mensaje_S" runat="server" BackColor="Green" ForeColor="White"></asp:Label>
+    <asp:Label ID="lbl_mensaje_E" runat="server" BackColor="Red" ForeColor="White"></asp:Label>
             <section class="col-md-4" aria-labelledby="gettingStartedTitle">
-                <h2 id="gettingStartedTitle">Getting started</h2>
-                <p>
-                    ASP.NET Web Forms lets you build dynamic websites using a familiar drag-and-drop, event-driven model.
-                A design surface and hundreds of controls and components let you rapidly build sophisticated, powerful UI-driven sites with data access.
-                </p>
-                <p>
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301948">Learn more &raquo;</a>
-                </p>
+                <div class="grid-container">
+                </div>
             </section>
             <section class="col-md-4" aria-labelledby="librariesTitle">
-                <h2 id="librariesTitle">Get more libraries</h2>
-                <p>
-                    NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.
-                </p>
-                <p>
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301949">Learn more &raquo;</a>
-                </p>
+                <h2>Precio Total</h2>
+                <asp:Label ID="lbl_precio" runat="server"></asp:Label>
+                <asp:Button ID="bt_guardar" runat="server" Text="Guardar" CssClass="btn btn-success" OnClick="bt_crear_Click"/>
             </section>
             <section class="col-md-4" aria-labelledby="hostingTitle">
-                <h2 id="hostingTitle">Web Hosting</h2>
-                <p>
-                    You can easily find a web hosting company that offers the right mix of features and price for your applications.
-                </p>
-                <p>
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
-                </p>
             </section>
         </div>
     </main>
-
+    <style>
+    .grid-container {
+        height: 200px; /* Ajusta esta altura según sea necesario */
+        overflow-y: scroll;
+    }
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+            margin-top: 96px;
+        }
+    .table th, .table td {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+    .table th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #f2f2f2;
+    }
+</style>
 </asp:Content>

@@ -10,7 +10,7 @@
             <asp:Label ID="lbl_producto" runat="server" Text="Producto"></asp:Label>
             <asp:DropDownList ID="ddl_producto" runat="server" CssClass="form-control"></asp:DropDownList>
             <asp:Button ID="bt_add" runat="server" Text="Agregar" CssClass="btn btn-info" OnClick="bt_add_Click"/>
-                    <asp:GridView ID="grid_pedido" runat="server" AutoGenerateColumns="False" CssClass="table" DataKeyNames="id_producto" OnRowDeleting="grid_pedido_RowDeleting">
+                    <asp:GridView ID="grid_pedido" runat="server" AutoGenerateColumns="False" CssClass="table" DataKeyNames="id,id_producto" OnRowDeleting="grid_pedido_RowDeleting">
                         <Columns>
                             <asp:TemplateField ShowHeader="False">
                                 <ItemTemplate>
@@ -32,14 +32,12 @@
     <asp:Label ID="lbl_mensaje_E" runat="server" BackColor="Red" ForeColor="White"></asp:Label>
             <section class="col-md-4" aria-labelledby="gettingStartedTitle">
                 <div class="grid-container">
+                <h2>Precio Total</h2>
+                <asp:Label ID="lbl_precio" runat="server"></asp:Label>
                 </div>
             </section>
             <section class="col-md-4" aria-labelledby="librariesTitle">
-                <h2>Precio Total</h2>
-                <asp:Label ID="lbl_precio" runat="server"></asp:Label>
                 <asp:Button ID="bt_guardar" runat="server" Text="Guardar" CssClass="btn btn-success" OnClick="bt_crear_Click"/>
-            </section>
-            <section class="col-md-4" aria-labelledby="hostingTitle">
             </section>
         </div>
     </main>
